@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!--Nav Bar-->
+  <div>
+  <header class="header">
+    <nav class="nav-bar">
+      <ul class="nav-menus">
+        <li>
+          <a href="">Home</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li>
+          <a href="">Categories</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li>
+          <a href="">Authors</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li><a href="">Contact us</a></li>
+      </ul>
+      
+      <div class="logo-container">
+        <div class="logo">
+          <a href="index.html"><img src="logo.svg" alt="store logo"></a>
+        </div>
+      </div>
+
+      <div class="nav-icons">
+        <a href=""> <img src="icon/search.svg" alt="search bar"></a>
+        <a href="shopping-cart.html"> <img src="icon/cart.svg" alt="shopping cart"></a>
+        <a href="sign-in.html"> <img src="icon/profile.svg" alt="user-profile"></a>
+      </div>
+    </nav>
+  </header>
+  </div>
+
+  <!--shopping cart page-->
+  <div class="cart-progress">
+
+    <!--progress status-->
+    <div class="number-container">
+      <div class="progress-now">
+        <span class="progress-number">1</span>
+      </div>
+      <p class="circle-text">
+        Shopping Cart
+      </p>
+    </div>
+
+    <div class="delemeter"></div>
+
+    <div class="number-container">
+      <div class="progress-later">
+        <span class="progress-number">2</span>
+      </div>
+      <p class="circle-text">
+        Details
+      </p>
+    </div>
+
+    <div class="delemeter"></div>
+
+    <div class="number-container">
+      <div class="progress-later">
+        <span class="progress-number">3</span>
+      </div>
+      <p class="circle-text">
+        Payment Details
+      </p>
+    </div>
+  </div>
+
+  <!--shopping cart section-->
+  <div class="order-info">
+    <div class="shopping-cart-container">
+      <div class="shopping-cart-title">
+        <div class="shopping-cart-heading">
+          <h2>Shopping Cart</h2>
+          <h2>3 items</h2> <!--will change to make it link with db so number will auto change-->
+        </div>
+        <div class="shopping-cart-delimeter"></div>
+      </div>
+
+      <div class="shopping-cart-details">
+        <table>
+          <thead>
+            <tr>
+              <th>PRODUCT DETAILS</th>
+              <th>QUANTITY</th>
+              <th>PRICE</th>
+              <th>TOTAL</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!--order 1-->
+            <tr class="shopping-cart-table-row">
+              <td class="product">
+                <img src="bookcover/the-housemaid.png" alt="the housemaid book">
+                <div class="book-details">
+                  <p>The Housemaid</p>
+                  <p class="stock-status in-stock">In Stock</p>
+                </div>
+              </td>
+              <td class="quantity">
+                <span>-</span>
+                <button>1</button> <!--will link from db next time-->
+                <span>+</span>
+              </td>
+                <td>£5.90</td>
+                <td>£5.90</td>
+                <td><img src="icon/bin.svg" alt="delete button" class=delete-btn></td>
+            </tr>
+            <!--order 2-->
+            <tr>
+              <td class="product">
+                <img src="bookcover/powerless-1.png" alt="powerless book">
+                <div>
+                  <p>Powerless</p>
+                  <p class="stock-status in-stock">In Stock</p>
+                </div>
+              </td>
+              <td class="quantity">
+                <span>-</span>
+                <button>2</button> <!--will link from db next time-->
+                <span>+</span>
+              </td>
+                <td>£5.90</td>
+                <td>£11.80</td>
+                <td><img src="icon/bin.svg" alt="delete button" class=delete-btn></td>
+            </tr>
+
+            <!--order 3-->
+            <tr>
+              <td class="product">
+                <img src="bookcover/one-thousand-boy-kisses.png" alt="one thousand boy kisses book">
+                <div>
+                  <p>One Thousand Boy Kisses</p>
+                  <p class="stock-status out-of-stock">Out Of Stock</p>
+                </div>
+              </td>
+              <td class="quantity">
+                <span>-</span>
+                <button>1</button> <!--will link from db next time-->
+                <span>+</span>
+              </td>
+                <td>£5.90</td>
+                <td>£5.90</td>
+                <td><img src="icon/bin.svg" alt="delete button" class=delete-btn></td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="index.html" class="continue-shopping">
+          <img src="icon/left-icon.svg">
+          Continue Shopping
+        </a>
+      </div>
+    </div>
+    <!--order summary-->
+    <div class="order-summary">
+      <h2 class="order-summary-heading">Order Summary</h2>
+      <div class="order-summary-delemeter"></div>
+
+      <div class="summary-item">
+        <div class="bold-summary-heading">ITEMS</div>
+        <div>3</div>
+        <div class="price">£17.70</div>
+      </div>
+
+      <div class="bold-summary-heading subheading">SHIPPING</div>
+
+      <div class="shipping-info">
+        <div class="subheading first-book">
+          <p>First Book</p>
+          <p class="price">£3.00</p>
+        </div>
+
+        <div class="subheading subsequent-book">
+          <p>Per added book</p>
+          <p class="price">£1.00</p>
+        </div>
+
+        <div class="subheading total-shipping-fee">
+          <p>Total shipping fee</p>
+          <p class="price">£5.00</p>
+        </div>
+      </div>
+
+      <div class="bold-summary-heading subheading">PROMO CODE</div>
+
+      <input type="text" placeholder="Enter your code" class="code-box">
+
+      <button class="apply-btn">APPLY</button>
+
+      <div class="line-summary"></div>
+
+      <div class="order-summary-delemeter2"></div>
+
+      <div class="total-cost">
+        <p class="bold-summary-heading subheading">TOTAL COST</p>
+        <p class="price">£17.70</p>
+      </div>
+
+      <a href="checking-out.html"><button class="checkout-btn">CHECK OUT</button></a>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--Nav Bar-->
+  <header class="header">
+    <nav class="nav-bar">
+      <ul class="nav-menus">
+        <li>
+          <a href="">Home</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li>
+          <a href="">Categories</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li>
+          <a href="">Authors</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li><a href="">Contact us</a></li>
+      </ul>
+      
+      <div class="logo">
+        <a href="index.html"><img src="logo.svg" alt="store logo"></a>
+      </div>
+    
+      <div class="nav-icons">
+        <a href=""> <img src="icon/search.svg" alt="search bar"></a>
+        <a href="shopping-cart.html"> <img src="icon/cart.svg" alt="shopping cart"></a>
+        <a href="sign-in.html"> <img src="icon/profile.svg" alt="user-profile"></a>
+      </div>
+    </nav>
+  </header>
+
+  <!--sign in options-->
+  <div class="create-account-box">
+    <div class="create-account-title">
+      <a href="sign-in.html"><h2>Sign In</h2></a>
+      <h2>Create an Account</h2>
+    </div>
+
+    <div class="create-account-option-delemeter"></div>
+
+    <div class="create-account-delemeter"></div>
+
+    <div class="create-account-details">
+      <h3>* Title</h3>
+      <select name="title" class="account-title"> <!--needs to link to db-->
+        <option value="mr">Mr</option>
+        <option value="ms">Ms</option>
+        <option value="miss">Miss</option>
+      </select>
+
+      <h3>* First Name</h3>
+      <input type="text">
+
+      <h3>* Last Name</h3>
+      <input type="text">
+
+      <h3>* Username</h3>
+      <input type="text">
+
+      <h3>* Email address</h3>
+      <input type="text">
+
+      <h3>* Confirm Email address</h3>
+      <input type="text">
+
+      <h3>* Phone number</h3>
+      <select name="phone-number" class="phone-number-country-code">
+        <option value="+44">+44</option>
+        <option value="+65">+65</option>
+        <option value="+88">+88</option>
+      </select>
+      <input type="text">
+
+      <h3>* Create a Password</h3>
+      <p class="password-requirement">Passwords must be between 12 and 64 characters</p>
+      <div class="create-account-password-box">
+        <input type="text">
+        <button class="password-show-btn">
+          <img src="icon/password-eye-close.svg" alt="closing-eye-pw">
+        </button>
+      </div>
+
+      <h3>* Confirm Password</h3>
+      <div class="create-account-password-box">
+        <input type="text">
+        <button class="password-show-btn">
+          <img src="icon/password-eye-close.svg" alt="closing-eye-pw">
+        </button>
+      </div>
+
+      <div class="promotion-query">
+        <div class="first-line">
+          <input type="checkbox" class="promotion-checkbox">
+          <p class="no-thanks">No thanks</p>
+        </div>
+        <p class="second-line"s>
+          Tick this box if you prefer not to
+          receive updates on new arrivals and exclusive offers. 
+          Click to see your privacy policy.</p>
+      </div>
+
+      <button class="create-account-sign-in">CREATE AN ACCOUNT</button>
+    </div>
+  </div>
+
+  <!--footer-->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <!--column 1-->
+      <div class="footer-column">
+        <div class="logo">
+          <img src="logo.svg" alt="story hub logo">
+          <span>Story Hub</span>
+        </div>
+
+        <div class="address">
+          123 Elmwood Crescent<br>
+          Westborough<br>
+          S11 4AB<br>
+          United Kingdom
+        </div>
+
+        <div class="socials">
+          <a href=""><img src="icon/facebook.svg" alt="facebook"></a>
+          <a href=""><img src="icon/discord.svg" alt="discord"></a>
+          <a href=""><img src="icon/pinterest.svg" alt="pinterest"></a>
+          <a href=""><img src="icon/instagram.svg" alt="instagram"></a>
+          <a href=""><img src="icon/google.svg" alt="google"></a>
+        </div>
+      </div>
+
+      <!--column 2-->
+      <div class="footer-column">
+        <p class="footer-heading">Need help?</p>
+        <p class="contact-number">+44 900 123 4567</p>
+        <p class="opening-time"> 
+          Monday - Friday: 09:00 - 18:00<br>
+          Saturday: 09:00 - 14:00
+        </p>
+        <a href="" class="email-link">storyhub@gmail.com</a>
+      </div>
+
+      <!--column 3-->
+      <div class="footer-column">
+        <p class="footer-heading">About Us</p>
+        <ul>
+          <li><a href="">Our Story</a></li>
+          <li><a href="">FAQ</a></li>
+          <li><a href="">Reviews</a></li>
+          <li><a href="">Sign In / Sign Up</a></li>
+        </ul>
+      </div>
+
+      <!--column 4-->
+      <div class="footer-column">
+        <p class="footer-heading">Support</p>
+        <ul>
+          <li><a href="">Delivery</a></li>
+          <li><a href="">Returns</a></li>
+          <li><a href="">Privacy</a></li>
+          <li><a href="">Cookies</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!--column 5-->
+      <div class="footer-column">
+        <p class="footer-heading">Account</p>
+        <ul>
+          <li><a href="">My Profile</a></li>
+          <li><a href="">My Orders</a></li>
+          <li><a href="">My Reviews</a></li>
+          <li><a href="">My Payment Options</a></li>
+          <li><a href="">My Wishlist</a></li>
+          <li><a href="">Register</a></li>
+          <li><a href="">Forgotten password</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

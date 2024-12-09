@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!--Nav Bar-->
+<header class="header">
+    <nav class="nav-bar">
+      <ul class="nav-menus">
+        <li>
+          <a href="">Home</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li>
+          <a href="">Categories</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li>
+          <a href="">Authors</a>
+          <img src="icon/dropdown.svg" alt="dropdown icon">
+        </li>
+        <li><a href="">Contact us</a></li>
+      </ul>
+      
+      <div class="logo-container">
+        <div class="logo">
+          <a href="index.html"><img src="logo.svg" alt="store logo"></a>
+        </div>
+      </div>
+
+      <div class="nav-icons">
+        <a href=""> <img src="icon/search.svg" alt="search bar"></a>
+        <a href="shopping-cart.html"> <img src="icon/cart.svg" alt="shopping cart"></a>
+        <a href="sign-in.html"> <img src="icon/profile.svg" alt="user-profile"></a>
+      </div>
+    </nav>
+  </header>
+
+  <!--shopping cart page-->
+  <div class="cart-progress">
+
+    <!--progress status-->
+    <div class="number-container">
+      <div class="progress-now">
+        <span class="progress-number">1</span>
+      </div>
+      <p class="circle-text">
+        Shopping Cart
+      </p>
+    </div>
+
+    <div class="delemeter"></div>
+
+    <div class="number-container">
+      <div class="progress-later">
+        <span class="progress-number">2</span>
+      </div>
+      <p class="circle-text">
+        Details
+      </p>
+    </div>
+
+    <div class="delemeter"></div>
+
+    <div class="number-container">
+      <div class="progress-later">
+        <span class="progress-number">3</span>
+      </div>
+      <p class="circle-text">
+        Payment Details
+      </p>
+    </div>
+  </div> 
+
+<div class="sign in">
+
+  <div class>
+    <h2 class="sign-in-heading">SIGN IN</h2>
+    <div class="checking-out-delemeter1"></div>
+  </div>
+
+  <div class="sign-in-container">
+    <!--registered user sign in-->
+    <div class="registered-user">
+        <h2>REGISTERED USER</h2>
+
+        <p>EMAIL ADDRESS</p>
+        <input type="text" class="input-box">
+
+        <p>PASSWORD</p>
+        <input type="text" class="input-box">
+
+        <p class="forget-password">Forget Password?</p>
+
+        <button class="sign-in-btn">
+            SIGN IN & CHECK OUT 
+        </button>
+
+        <a href="shopping-cart.html" class="continue-shopping">
+            <img src="icon/left-icon.svg">
+            Continue Shopping
+        </a>
+    </div>
+
+    <div class="checking-out-delemeter2"></div>
+
+    
+    <!--guest checkout-->
+    <div class="guest-checkout">
+        <h2 class="check-out-heading"c>CHECK OUT AS GUEST</h2>
+        
+        <p>* EMAIL ADDRESS</p>
+        <input type="text" class="input-box">
+
+        <p>* CONFIRM EMAIL ADDRESS</p>
+        <input type="text" class="input-box">
+
+        <p class="promotion-question">Do you want to receive the latest offers and promotions from Story Hub?</p>
+
+        <div class="promotion-box">
+            <div class="first-line">
+              <input type="checkbox" class="promotion-checkbox">
+              <p class="no-thanks">No thanks</p>
+            </div>
+            <p class="second-line"s>
+              Tick this box if you prefer not to
+              receive updates on new arrivals and exclusive offers. 
+              Click to see your privacy policy.</p>
+        </div>
+
+        <h3>Delivery address</h3>
+
+        <p>
+            *TITLE
+        </p>
+
+        <select name="title" class="title"> <!--needs to link to db-->
+            <option value="mr">Mr</option>
+            <option value="ms">Ms</option>
+            <option value="miss">Miss</option>
+        </select>
+
+        <div class="name-box">
+            <p>
+                *FULL NAME
+            </p>
+
+            <div class="name-div">
+                <input type="text" placeholder="First Name" class="input-box">
+                <input type="text" placeholder="Last Name" class="input-box">
+            </div>
+        </div>
+
+        <p>* PHONE NUMBER</p>
+
+        <input type="text" class="input-box">
+
+        <p>* ADDRESS</p>
+
+        <div class="address-line">
+          <input type="text" placeholder="Street Address" class="input-box">
+          <input type="text" placeholder="Office, Suite, Apt" class="input-box">
+        </div>
+        
+
+        <div class="address-city">
+            <div class="address-info">
+                <p>* CITY</p>
+                <input type="text" class="input-box">
+            </div>
+
+            <div class="address-info">
+                <p>COUNTY</p>
+                <input type="text" placeholder="Choose..." class="input-box">
+            </div>
+
+            <div class="address-info">
+                <p>* POSTCODE</p>
+                <input type="text" class="input-box">
+            </div>
+        </div>
+
+        <h2 class="delivery-instruction">SPECIAL DELIVERY INSTRUCTION (Optional)</h2>
+
+        <p class="delivery-instruction-subheading">
+            If you are unavailable at delivery, we will try to leave the items in your designated safe place.<br>
+        </p>
+
+        <p class="max-character">
+          Max 50 characters
+        </p>
+
+        <input type="text" placeholder="E.g. Leave with neighbour" class="delivery-input-box">
+
+        <div class="delivery-checkbox">
+          <input type="checkbox">
+          <p>Billing address same as delivery address</p>
+        </div>
+       
+        <a href="payment.html"><button class="guest-checkout-btn">
+            CHECKOUT AS GUEST
+        </button></a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!--Nav Bar-->
+<header class="header">
+  <nav class="nav-bar">
+    <ul class="nav-menus">
+      <li>
+        <a href="">Home</a>
+        <img src="icon/dropdown.svg" alt="dropdown icon">
+      </li>
+      <li>
+        <a href="">Categories</a>
+        <img src="icon/dropdown.svg" alt="dropdown icon">
+      </li>
+      <li>
+        <a href="">Authors</a>
+        <img src="icon/dropdown.svg" alt="dropdown icon">
+      </li>
+      <li><a href="">Contact us</a></li>
+    </ul>
+    
+    <div class="logo-container">
+      <div class="logo">
+        <a href="index.html"><img src="logo.svg" alt="store logo"></a>
+      </div>
+    </div>
+
+    <div class="nav-icons">
+      <a href=""> <img src="icon/search.svg" alt="search bar"></a>
+      <a href="shopping-cart.html"> <img src="icon/cart.svg" alt="shopping cart"></a>
+      <a href="sign-in.html"> <img src="icon/profile.svg" alt="user-profile"></a>
+    </div>
+  </nav>
+</header>
+
+  <!--shopping cart page-->
+  <div class="cart-progress">
+
+    <!--progress status-->
+    <div class="number-container">
+      <div class="progress-now">
+        <span class="progress-number">1</span>
+      </div>
+      <p class="circle-text">
+        Shopping Cart
+      </p>
+    </div>
+
+    <div class="delemeter"></div>
+
+    <div class="number-container">
+      <div class="progress-later">
+        <span class="progress-number">2</span>
+      </div>
+      <p class="circle-text">
+        Details
+      </p>
+    </div>
+
+    <div class="delemeter"></div>
+
+    <div class="number-container">
+      <div class="progress-later">
+        <span class="progress-number">3</span>
+      </div>
+      <p class="circle-text">
+        Payment Details
+      </p>
+    </div>
+  </div>  
+
+  <!--payment section-->
+  <h2 class="payment-details-heading">PAYMENT DETAILS</h2>
+  <div class="payment-delemeter"></div>
+
+  <div class="payment-container">
+
+    <div class="card-images">
+      <img src="icon/payment-method/visa.svg" class="card-box">
+      <img src="icon/payment-method/applepay.svg" class="card-box" >
+      <img src="icon/payment-method/mastercard.svg" class="card-box">
+      <img src="icon/payment-method/paypal.svg" class="card-box">
+      <img src="icon/payment-method/unionpay.svg" class="card-box">
+    </div>
+
+    <div class="card-details-container">
+      <div class="card-details">
+        <h3>Credit Card Information</h3>
+
+        <p>NAME ON CARD</p>
+        <input type="text">
+
+        <p>CARD NUMBER</p>
+        <input type="text">
+
+        <div class="card-security">
+          <div class="card-cvv">
+              <p>CVV</p>
+              <input type="text" placeholder="***">
+          </div>
+
+          <div class="card-expires">
+              <p>EXPIRATION DATE</p>
+              <div class="expires-details">
+                <select name="expire-month" class="expire-month">
+                    <option value="January">January</option>
+                    <option value="Febrary">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="Devember">December</option>
+
+                    
+                </select>   
+                <select name="expire-year" class="expire-year">
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2032</option>
+                    <option value="2034">2034</option>
+                </select>            
+              </div>
+          </div>
+        </div>
+        <a href="index.html" class="continue-shopping">
+          <img src="icon/left-icon.svg">
+          Continue Shopping
+        </a>
+      </div>
+
+      <div class="payment-divider-delemeter"></div>
+
+      <div class="payment-summary">
+          <h3>Order Summary</h3>
+
+          <div class="order-books">
+            <img src="bookcover/the-housemaid.png">
+            <p>The Housemaid</p>
+          </div>
+          
+          <p class="view-more">
+            <span>View more</span> 
+            <!-- <span><img src="icon/dropdown.svg" alt="dropdown-icon" class="view-more-icon"></span> -->
+          </p>
+
+          <div class="cost-container">
+              <div class="cost-row">
+                  <p>Subtotal</p>
+                  <p>£17.70</p>
+              </div>
+              <div class="cost-row">
+                  <p>Shipping</p>
+                  <p>£5.00</p>
+              </div>
+          </div>
+      
+          <div class="payment-summary-delemeter"></div>
+
+          <div class="total-cost-row">
+              <p>Total</p>
+              <p>£22.70</p>
+          </div>
+
+          <a href="payment-confirmation.html">
+            <button class="checkout-btn">
+              Place Order
+            </button>
+          </a>
+      </div>  
+    </div>
+  </body>
+  </html>
