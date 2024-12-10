@@ -11,7 +11,8 @@
 <body>
   <!--Nav Bar-->
   <header class="header">
-    <nav class="nav-bar">
+
+    <div class="header-1">
       <ul class="nav-menus">
         <li>
           <a href="">Home</a>
@@ -27,17 +28,16 @@
         </li>
         <li><a href="">Contact us</a></li>
       </ul>
-      
-      <div class="logo">
-        <a href="index.html"><img src="logo.svg" alt="store logo"></a>
-      </div>
     
+
+      <a href="index.html"><img src="logo.svg" alt="store logo" class="logo"> </a>
+
       <div class="nav-icons">
         <a href=""> <img src="icon/search.svg" alt="search bar"></a>
         <a href="shopping-cart.html"> <img src="icon/cart.svg" alt="shopping cart"></a>
         <a href="sign-in.html"> <img src="icon/profile.svg" alt="user-profile"></a>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!--sign in options-->
@@ -52,29 +52,78 @@
     <div class="sign-in-delemeter"></div>
 
     <div class="sign-in-details">
-      <h3>* Email</h3>
-      <input type="text">
-      <h3>* Password</h3>
-      <div class="password-box">
-        <input type="text">
-        <button class="password-show-btn">
-          <img src="icon/password-eye-close.svg" alt="closing-eye-pw">
-        </button>
-      </div>
-      <div class="remember-me">
-        <input type="checkbox">
-        <p>Remember me?</p>
-      </div>
+      <form id="loginForm" action="login-in-handler.php" method="POST">
+        <label for="username">
+          <h3>* Username</h3>
+        </label>
+        <input type="username" id="username" name="username" required>
 
-      <button class="registered-user-sign-in">SIGN IN</button>
+        <label for="password">
+          <h3>* Password</h3>
+        </label>
 
+        <div class="password-box">
+          <input type="password" id="password" name="password" required>
+          <button type="button" class="password-show-btn" onclick="togglePasswordVisibility">
+            <img src="icon/password-eye-close.svg" alt="toggle-password-visibility">
+          </button>
+        </div>
+
+        <div class="remember-me">
+          <input type="checkbox" id="remember-me" name="remember-me">
+          <label for="remember-me">Remember me?</label>
+        </div>
+
+        <button type="submit" class="registered-user-sign-in">SIGN IN</button>
+      </form>
+
+      <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+
+          try{
+            //send login request to REST API
+            const response = await fetch('http://localhost:5500/login.php', {
+              method: 'POST', 
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ username, password }),
+            });
+
+            if(!response.ok) {
+              throw new Error('Login failed');
+            }
+
+            const data = await response.json();
+
+            if (data.session_id) {
+              //save the session_id
+              localStorage.setItem('session_id', data.session_id);
+
+              //after successful login, save the username to cookies 
+              document.cookie = 'username=${username}; path=/; max-age=${60 * 60 * 24 * 7}'; //expires in one week
+
+              alert('Login successful');
+            } else {
+              alert('Login failed!')
+            }
+            //optionally redirect to another page
+            window.location.href = '/';
+          } catch (error) {
+            console.error('Error:', error);
+            alert('Login failed. Please try again.');
+          }
+        });
+      </script>
       <p class="forgot-password">Forgotten Password?</p>
     </div>
   </div>
-
-
-
-
   
   <!--footer-->
   <footer class="footer">
