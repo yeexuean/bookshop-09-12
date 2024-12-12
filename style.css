@@ -11,6 +11,7 @@ body {
   font-family: "Poppins", sans-serif;
   width: 100%;
   font-size: 1rem;
+  overflow: hidden;
 }
 
 html{
@@ -32,7 +33,7 @@ html::-webkit-scrollbar-thumb{
   background:var(#315446) ;
 }
 
-/*set colours*/
+/*set colours - don't have to keep repeat*/
 .green-text {
   color: #315446;
 }
@@ -47,80 +48,92 @@ html::-webkit-scrollbar-thumb{
 
 /*nav bar*/
 .section2, .section2, .section3 {
-  width: 33%;
+width: 33%;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 
 .header .header-1 {
-  padding: .5rem 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #315446;
+padding: 1rem 2rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #315446;
 }
 
 .header .header-1 .nav-menus {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: .5rem;
-  gap: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+/* flex-wrap: wrap; */
 }
 
 .header .header-1 .section1 {
-  display: flex;
-  justify-content: center;
-  width: 40%;
+display: flex;
+justify-content: center;
+width: 40%;
+}
+
+.header .header-1 li {
+  margin-bottom: 0.5rem;
 }
 
 .header .header-1 li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
+color: white;
+text-decoration: none;
+font-size: 1rem;
+padding: 0.5rem;
 }
 
 .header .header-1 .logo {
-  width: 9rem;
-  margin-top: 1.2rem;
-  display: flex;
+width: 6rem;
+margin-top: 1.2rem;
+max-width: 10rem;
+margin-top: 0;
 }
 
 .header .header-1 .section2 {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
+margin-top: 1rem;
 }
 
 .header .header-1 .section3 {
-  display: flex;
-  justify-content: right;
-  margin-right: 2rem;
+display: flex;
+justify-content: right;
+margin-right: 2rem;
 }
 
 .header .header-1 .nav-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 3rem;
 }
 
 .header .header-1 .nav-icons img {
-  width: 1rem;
+width: 1.2rem;
 }
 
 .header .header-1 .nav-icons img:hover {
-  transform: scale(1.2);
-  cursor: pointer;
-  opacity: 0.8;
+transform: scale(1.2);
+cursor: pointer;
+opacity: 0.8;
 }
 
 /*hero section*/
 .hero-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 8rem 5rem;
-  /* gap: 3rem; */
+  gap: 2rem;
   margin-bottom: 5rem;
 }
 
@@ -129,15 +142,15 @@ html::-webkit-scrollbar-thumb{
   flex-direction: column;
   line-height: 3rem;
   width: 100%;
-  margin: 3rem;
-  /* flex: 1;
-  height: 150px; */
+  margin-right: 2rem;
+  flex: 1;
+  /* height: 150px; */
 }
 
 .trending-content h2 {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
-  width: 40rem;
+  width: 100%;
 }
 
 .trending-content p {
@@ -163,12 +176,14 @@ html::-webkit-scrollbar-thumb{
 .harrypotter-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  flex: 1;
+  gap: 1rem;
 }
 
 /* .harry-potter  */
 .large-book {
-  width: 20rem;
+  width: 60%;
   margin-left: -30px;
   margin-right: -30px;
   z-index: 1;
@@ -176,7 +191,7 @@ html::-webkit-scrollbar-thumb{
 }
 
 .small-book {
-  width: 15rem;
+  width: 50%;
   border-radius: 0.8rem;
 }
 
@@ -288,48 +303,52 @@ html::-webkit-scrollbar-thumb{
 }
 
 /*genre section*/
-
 .genre-heading {
-  display: block;
+  display: flex;
+  justify-content: center;
   padding: 5rem;
   text-align: center;
   font-size: 3rem;
+  z-index: 1;
 }
 
 .genres-container {
-  position: relative;
   display: flex;
   text-align: center;
+  justify-content: space-between;
   flex-direction: column;
-  width: 75rem;
-  height: 40rem;
-  margin: 0rem 10rem 0rem 10rem;
-  border-radius: none;
+  align-items: center;
+  width: 85%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem;
+  height: auto;
+  border-radius: 0.6rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  justify-content: flex-end; 
-  padding: 8rem;
+  justify-content: flex-start; 
+  overflow: hidden;
 }
 
 .genres-grid {
   display: grid;
   width: 100%;
-  height: 40rem;
-  grid-template-columns: repeat(4,1fr);
-  gap: 3rem;
+  /* height: 40rem; */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 2rem;
   justify-items: center;
   align-items: center;
-  margin-top: 2rem;
 }
 
 .genres-content {
-  width: 60rem;
-  height: 30rem;
+  width: 100%;
+  /* height: 30rem; */
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 2rem;
   justify-items: center;
   align-items: center;
-  margin-top: 12rem;
+  margin: 0;
+  padding: 0;
 }
 
 .genres-category {
@@ -340,8 +359,8 @@ html::-webkit-scrollbar-thumb{
 }
 
 .genres-category .circle {
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
   border-radius: 50%;
   background-color: #FAECE3;
   margin-bottom: 10px;
@@ -355,48 +374,130 @@ html::-webkit-scrollbar-thumb{
   margin-top: 1.5rem;
 }
 
+/*adjust image placement*/
+.genres-category .circle .romance-img{
+  margin-right: .5rem;
+  margin-top: 2rem;
+}
+
+.genres-category .circle .mystery-img{
+  margin-left: .5rem;
+  margin-top: 2rem;
+}
+
+.genres-category .circle .thriller-img{
+  margin-left: -.5rem;
+  margin-top: 1.8rem;
+}
+
+.genres-category .circle .horror-img{
+  margin-left: 0.5rem;
+  margin-top: 1.6rem;
+}
+
+.genres-category .circle .comedy-img{
+  margin-left: .5rem;
+  margin-top: 2rem;
+}
+
+.genres-category .circle .sci-fi-img{
+  margin-left: 1.3rem;
+  margin-top: 1.8rem;
+}
+
+.genres-category .circle .children-img{
+  margin-left: 1.3rem;
+  margin-top: 1.8rem;
+}
+
+.genres-category .circle .psychology-img{
+  margin-left: 0.3rem;
+  margin-top: 1.4rem;
+} /*end of adjusting*/
+
 .genres-category p {
   color: #2C1106;
-  margin-top: 12rem;
+  margin-top: 10rem;
 }
 
 .genres-btn {
-  margin-bottom: 1.5rem;
+  position: relative;
+  /* bottom: 2rem; */
+  margin-left: .4rem;
 }
 
 .browse-btn {
-  position: absolute;
+  position: relative;
+  margin-top: 3rem;
   background-color: #315446;
   color: white;
   border: none;
   border-radius: 1rem;
-  padding: 12px 0;
-  width: 9rem;
-  font-size: 0.8rem;
-  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  width: 15rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
   text-align: center;
-  justify-content: center;
-  align-self: center;
-  margin-top: -1rem; 
-  margin-left: 45rem;
+  /* justify-content: center; */
+
+  left: 0.1rem;
 }
 
 .browse-btn:hover {
   background-color: #183f2f;
 }
 
+.pink-bg {
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
+  font-size: 4rem;
+  padding: 12rem 10rem;
+  background-color: #F4B1A4;
+  color: #315446;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .genres-container {
+    padding: 2rem;
+  }
+
+  .browse-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
 /*A story for every world*/
-.story-text {
+/* .story-text {
   justify-content: center;
   text-align: center;
   font-size: 4rem;
-  padding: 30rem 10rem;
+  padding: 20rem 10rem;
   background-color: #F4B1A4;
   color: #315446;
-  margin-top: -5rem;
-  margin-bottom: 5rem;
+  margin: auto
   z-index: -1;
+} */
+
+.story-text {
+  font-size: 5vw;
+  text-align: center;
+  padding: 20rem 0;
+  /* white-space: nowrap; */
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .story-text {
+    font-size: 2.5rem;
+  }
 }
 
 /*monthly top authors*/
@@ -454,23 +555,25 @@ html::-webkit-scrollbar-thumb{
 
 .review-container {
   display: flex;
-  gap: 2.5rem;
   justify-content: center;
   align-items: center;
-  align-self: center;
-  margin-bottom: 10rem;
+  position: relative;
+  gap: 2.5rem;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto 5rem auto;
 }
 
 .review-card {
+  flex: 0 0 auto;
   width: 17rem;
-  height: 17rem;
+  height: 19rem;
   padding: 20px;
   border: none;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   background-color: white;
   display: flex;
-  flex: 0 0 auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -491,30 +594,31 @@ html::-webkit-scrollbar-thumb{
 }
 
 .review-text {
-  text-align: justify;
+  text-align: center;
   line-height: 1.4rem;
   margin-bottom: 1rem;
   color: #2C1106;
+  font-size: 200;
 }
 
 .client-stars-rating {
-  text-align: left;
-  justify-content: left;
-  align-self: flex-start;
+  text-align: center;
+  align-self: center;
+  margin-top: auto;
 }
 
-.left-click {
+/* .left-click {
   width: 35px;
   height: 35px;
   border: none;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   background-color: white;
-  margin-left: 4rem; /*why does the shape move when i adjust the margin*/
+  margin-left: 4rem; 
   cursor: pointer;
   flex-shrink: 0;
-}
-
+} */
+/* 
 .right-click {
   width: 35px;
   height: 35px;
@@ -528,14 +632,33 @@ html::-webkit-scrollbar-thumb{
   align-items: center;
   cursor: pointer;
   flex-shrink: 0;
+} */
 
+.left-click, .right-click {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: white;
+  cursor: pointer;
 }
 
-.left-click:hover {
-  background-color: #f8f7f7;
+.left-click {
+  left: -1rem;
 }
 
-.right-click:hover{
+.right-click {
+  left: -1rem;
+}
+.left-click:hover, .right-click:hover {
   background-color: #f8f7f7;
 }
 
@@ -543,8 +666,8 @@ html::-webkit-scrollbar-thumb{
 .advantage-container {
   display: flex;
   justify-content:center;
-  align-items: center;
-  gap: 12rem;
+  align-items: stretch;
+  gap: 4rem;
   padding: 2rem;
   margin-bottom: 5rem;
 }
@@ -552,22 +675,33 @@ html::-webkit-scrollbar-thumb{
 .advantage-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
   color: #2C1106;
+  text-align: center;
+  max-width: 20rem;
+  height: auto;
+  padding: 1.5rem;
 }
 
-.advantage-card img {
+.advantage-card i {
   margin-bottom: 2rem;
   justify-content: center;
+  font-size: 2.5rem;
+  color: #315446;
+}
+
+.advantage-card h3 {
+  width: 12rem;
+  color: #2C1106;
 }
 
 .advantage-card p {
   font-size: 0.9rem;
   color: #2C1106;
   text-align: center;
-  margin-bottom: 2rem;
-  width: 10rem; 
+  margin: 0;
+  line-height: 1.5rem;
 }
 
 /*subscribe section*/
@@ -591,6 +725,7 @@ html::-webkit-scrollbar-thumb{
   width: 35rem;
   margin-top: 6.8rem;
   right: 5rem;
+  object-fit: contain;
 }
 
 .subscribe-info {
@@ -598,6 +733,8 @@ html::-webkit-scrollbar-thumb{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: left;
+  max-width: 35rem;
 }
 
 .subscribe-info h2{
@@ -609,42 +746,58 @@ html::-webkit-scrollbar-thumb{
 .subscribe-info p {
   color: #2C1106;
   font-size: 1.2rem;
-  font-weight: lighter;
+  font-weight: 400;
   margin-bottom: 1.5rem;
   text-align: center;
-  width: 25rem;
+  width: 28rem;
+}
+
+.subscribe-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
 }
 
 .email-btn {
+  /* position: relative; */
   background-color: white;
   color: #C9C9C9;
   border: none;
   border-radius: 8rem;
   font-size: 0.8rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 14rem;
+  width: 18rem;
   padding: 0.9rem 1.5rem;
   text-align: left;
+  /* z-index: 1; */
 } 
 
 .subscribe-btn {
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #315446;
   color: white;
   border: none;
-  border-radius: 30px;
+  border-radius: 8rem;
   font-size: 0.8rem;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 15px;
-  margin-right: 5rem ;
-  position: absolute;
+  padding: 1rem 2rem;
+  /* margin-right: 5rem ; */
   cursor: pointer;
+  /* z-index: 2; */
 }
 
 .subscribe-btn img {
-  color: white;
+  /* color: white; */
+  margin-left: 1rem;
   filter: invert(1);
+}
+
+.subscribe-btn:hover {
+  background-color: #183f2f;
 }
 
 /*footer*/
@@ -830,7 +983,7 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  width: 60rem;
+  width: 60%;
   margin-left: 6rem;
   margin-right: 3.8rem;
   justify-content: space-between;
@@ -879,6 +1032,7 @@ ul li a:hover {
 }
 
 .shopping-cart-details td .delete-btn{
+  width: 1.2rem;
   text-align: center;
 }
 
@@ -938,7 +1092,6 @@ ul li a:hover {
 
 .shopping-cart-details .delete-btn {
   cursor: pointer;
-  width: 1rem;
 }
 
 .continue-shopping {
@@ -950,6 +1103,7 @@ ul li a:hover {
 }
 
 .continue-shopping img {
+  width: .5rem;
   margin-right: 15px;
   cursor: pointer;
 }
@@ -957,7 +1111,7 @@ ul li a:hover {
 /*order summary*/
 .order-summary {
   background-color: #FAECE3;
-  width: 25rem;
+  width: 40%;
   padding: 3rem;
   height: 60rem;
   margin-top: -1rem;
@@ -996,7 +1150,7 @@ ul li a:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  font-weight: 300; 
+  font-weight: lighter; /*need see result with a diff font*/
 }
 
 .code-box { 
@@ -1005,11 +1159,10 @@ ul li a:hover {
   align-items: center;
   border: none;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 20px;
   width: 100%;
-  height: 3rem;
   color: #C9C9C9;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
   font-size: 0.9rem;
 }
 
@@ -1061,6 +1214,8 @@ ul li a:hover {
   justify-content: center;
   align-items: top;
   padding: 2rem;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .sign-in {
@@ -1070,13 +1225,15 @@ ul li a:hover {
 .sign-in-heading {
   font-size: 1.5rem;
   color: #2C1106;
+  margin-left: 3rem;
   margin-bottom: 2.5rem;
   padding: 0 4.1rem;
 }
 
 .checking-out-delemeter1{
-  width: 80rem;
+  width: 85%;
   height: 0.12rem;
+  margin: 0 auto;
   background-color: #C9C9C9;
   padding: 0 2rem; /*issue - not moving the placement*/
 }
@@ -1084,7 +1241,8 @@ ul li a:hover {
 .registered-user {
   display: flex;
   flex-direction: column;
-  width: 45rem;
+  position: relative;
+  width: 50%;
   padding: 2rem;
 }
 
@@ -1099,7 +1257,7 @@ ul li a:hover {
 }
 
 .registered-user input {
-  width: 24rem;
+  width: 28rem;
   padding: 1.2rem;
   border-radius: 0.6rem;
   border-color: #B7B7B7; /*border radius have 2 colour*/
@@ -1117,27 +1275,37 @@ ul li a:hover {
   border: none;
   border-radius: 0.6rem;
   font-size: 1rem;
-  width: 24rem;
+  font-weight: bold;
+  width: 35rem;
   padding: 1.2rem 1rem;
   color: white;
   margin-bottom: 3rem;
   margin-top: 1rem;
+  cursor: pointer;
+}
+
+.sign-in-btn:hover {
+  background-color: #183f2f;
 }
 
 .checking-out-delemeter2 {
   width: 0.14rem;
-  height: 120rem;
+  height: 132rem;
   background-color: #C9C9C9;
+  margin-top: 2rem;
   margin-right: 2rem;
+  margin-left: 2rem;
 }
 
 /*guest checkout*/
 .guest-checkout {
   display: flex;
   flex-direction: column;
-  width: 40rem;
+  position: relative;
+  left: 4rem;
+  width: 50%;
   padding: 2rem 0;
-  margin-left: 3rem;
+  /* margin-left: 3rem; */
 }
 
 .check-out-heading {
@@ -1152,7 +1320,7 @@ ul li a:hover {
 }
 
 .guest-checkout input {
-  width: 24rem;
+  width: 28rem;
   padding: 1.2rem;
   border-radius: 0.6rem;
   border-color: #B7B7B7; /*border radius have 2 colour*/
@@ -1170,8 +1338,9 @@ ul li a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 24rem;
+  width: 28rem;
   height: 10rem;
+  padding: 2rem 0;
   background-color: #F5F5F5;
   border-radius: 0.6rem;
 }
@@ -1188,19 +1357,18 @@ ul li a:hover {
   line-height: 1.5rem;
 }
 
-/*guest checkout*/
 .guest-checkout h3 {
   color: #2C1106;
   margin: 2.5rem 0;
 }
 
 .title { /*arrow is to close to the border*/
-  width: 24rem;
+  width: 28rem;
   padding: 1.2rem;
   border-radius: 0.6rem;
   margin-bottom: 2.5rem;
   color: #B7B7B7;
-  background-color:#f0f0f0 ;
+  background-color:#ffffff ;
   border-color: #B7B7B7;
   border-width: 2px;
   font-size: 0.95rem;
@@ -1208,27 +1376,24 @@ ul li a:hover {
 
 .name-div {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  margin-right: 16.2rem;
+  width: 100%;
 }
 
 .name-div input {
-  width: 11.2rem;
+  width: 13.3rem;
   font-size: 0.95rem;
 }
 
 .address-line {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  margin-right: 16.2rem;
 }
 
 .address-line input {
-  width: 11.2rem;
+  width: 13.3rem;
   font-size: 0.95rem;
 }
 
@@ -1236,28 +1401,17 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   font-size: 0.95rem;
+  width: 28rem;
 }
 
 .address-info {
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
-  margin-bottom: 1rem;
-  width: 11.2rem;
-  gap: 2rem;
+
 }
 
-.address-city { /*want to make it align with the rest*/ /*row messed up when shrink*/
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  right: 3.5rem;
-}
-
-.address-city.address-info.input-box {
-  width: 2rem;
+.address-city .address-info .input {
+  width: 1rem;
   font-size: 0.95rem;
 }
 
@@ -1283,25 +1437,18 @@ ul li a:hover {
 
 .delivery-checkbox {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 50rem;
-  gap: -40rem;
+  gap: 2rem;
 }
 
-.delivery-checkbox input {
-  position: relative;
-  right: 6.3rem;
-}
-
-.delivery-checkbox p {
-
+.promotion-checkbox{
+  width: 0;
 }
 
 .guest-checkout-btn {
   border: none;
   border-radius: 0.6rem;
-  width: 24rem;
+  width: 28rem;
   padding: 1.2rem 0.5rem;
   font-size: 0.95rem;
   font-weight: bold;
@@ -1312,6 +1459,10 @@ ul li a:hover {
   text-decoration: none;
 }
 
+.guest-checkout-btn:hover {
+  background-color: #183f2f;
+}
+
 /*payment page*/
 .payment-container {
   /* display: flex; */
@@ -1319,7 +1470,7 @@ ul li a:hover {
   padding-left: 50px;
   padding-right: 50px;
   width: 100%;
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
 }
 
 .payment-details-heading {
@@ -1352,12 +1503,14 @@ ul li a:hover {
 .card-details-container {
   display: flex;
   padding: 0 2rem;
+  width: 100%;
+  margin: 0 auto;
   /* padding-left: 50px;
   padding-right: 50px; */
 }
 
 .card-details {
-  width: 40rem;
+  width: 50%;
   /* padding-left: 2rem; */
 }
 
@@ -1374,7 +1527,7 @@ ul li a:hover {
 
 .card-details input {
   margin-bottom: 40px;
-  width: 24rem;
+  width: 28rem;
   padding: 1rem;
   border-radius: 0.6rem;
   border-color: #B7B7B7; /*border radius have 2 colour*/
@@ -1386,7 +1539,7 @@ ul li a:hover {
 }
 
 .card-cvv input {
-  width: 6rem;
+  width: 9.5rem;
   margin-right: 1.6rem;
 }
 
@@ -1420,7 +1573,7 @@ ul li a:hover {
   width: 0.1rem;
   height: 40rem;
   background-color: #C9C9C9;
-  margin-right: 8rem;
+  margin-right: 6rem;
 }
 
 /*payment summary section*/
@@ -1428,6 +1581,7 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: top;
+  width: 50%;
 }
 
 .payment-summary h3 {
@@ -1482,7 +1636,7 @@ ul li a:hover {
 }
 
 .payment-summary-delemeter {
-  width: 18rem;
+  width: 32rem;
   height: 0.12rem;
   background-color: #C9C9C9;
   margin-bottom: 1.5rem;
@@ -1494,6 +1648,23 @@ ul li a:hover {
   align-items: center;
   margin-bottom: 1.5rem;
   font-size: 0.95rem;
+}
+
+.place-order-btn {
+  width: 33rem;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 1rem 0.5rem;
+  font-weight: bold;
+  background-color: #315446;
+  color: white;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.place-order-btn:hover {
+  background-color: #183f2f;
 }
 
 /*payment confirmation page*/
@@ -1540,7 +1711,8 @@ ul li a:hover {
 }
 
 .tick-row .back-to-shopping img {
-  width: 1.5rem;
+  width: 1.2rem;
+  cursor: pointer;
 }
 
 .tick-row .back-to-shopping a{
@@ -1566,7 +1738,7 @@ ul li a:hover {
 .order-details-box {
   background-color: #FAECE3;
   width: 70rem;
-  height: 28rem;
+  height: 30rem;
   border-radius: 0.8rem;
 }
 
@@ -1594,7 +1766,7 @@ ul li a:hover {
 
 .left-text { /*left column inside the order details box*/
   color: black;
-  font-weight: lighter;
+  font-weight: 400;
 }
 
 .right-text {/*right column inside the order details box*/
@@ -1699,11 +1871,13 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  width: 50rem;
+  width: 50%;
   height: 40rem;
   border-radius: 0.6rem;
+  margin: 4rem auto;
+  /* margin-top: 2rem;
   margin-left: 20rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem; */
   padding: 2.5rem;
   background-color: #FAECE3;
 }
@@ -1715,6 +1889,7 @@ ul li a:hover {
   gap: 14.5rem;
   color: #2C1106;
   margin-bottom: 2rem;
+  margin-left: 5rem;
 }
 
 .sign-in-title a{
@@ -1723,31 +1898,43 @@ ul li a:hover {
 }
 
 .sign-in-option-delemeter {
-  width: 18rem;
+  width: 50%;
   height: 0.1rem;
   background-color: #315446;
 }
 
 .sign-in-delemeter {
-  width: 43rem;
+  width: 100%;
   height: 0.1rem;
   background-color: #2C1106;
   opacity: 0.3;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .sign-in-details {
   display: flex;
   flex-direction: column;
+  margin-top: 1.5rem;
 }
 
 .sign-in-details h3 {
   margin-bottom: 1rem;
+  color: #2C1106;
 }
 
-#loginForm input {
+.username-box input {
   margin-bottom: 3rem;
-  width: 43rem;
+  width: 100%;
+  height: 3rem;
+  padding: 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.password-box input {
+  margin-bottom: 3rem;
+  width: 100%;
   height: 3rem;
   padding: 1.5rem;
   border: none;
@@ -1767,7 +1954,7 @@ ul li a:hover {
   height: 3rem;
   border: none;
   border-radius: 0.6rem;
-  margin-left: 39rem;
+  margin-left: 36rem;
   cursor: pointer;
 }
 
@@ -1777,24 +1964,31 @@ ul li a:hover {
 
 .remember-me {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: top;
   width: 1rem;
   margin: 0;
   font-style: italic;
+  margin-bottom: 2rem;
+  gap: 2rem;
 }
 
-#loginForm .remember-me input {
+.remember-me input {
   /* width: 2rem; */
   border-radius: 1rem;
-  margin-bottom: 3rem;
-  margin-right: 2rem;
+  /* margin-bottom: 3rem; */
+  /* margin-right: 2rem; */
+  gap: 2rem;
   background-color: #183f2f;
   font-style: italic;
 } 
 
+.remember-me label {
+  width: 10rem;
+}
+
 .registered-user-sign-in {
-  width: 43rem;
+  width: 40rem;
   height: 3rem;
   border: none;
   border-radius: 0.6rem;
@@ -1802,12 +1996,17 @@ ul li a:hover {
   background-color: #315446;
   color: white;
   margin-bottom: 1.8rem;
+  cursor: pointer;
+}
+
+.registered-user-sign-in:hover {
+  background-color: #183f2f;
 }
 
 .forgot-password {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: italic;
-  color:#2C1106
+  color:#888888
 }
 
 
@@ -1816,11 +2015,12 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  width: 50rem;
+  width: 50%;
+  margin: 4rem auto;
   height: 113rem;
   border-radius: 0.6rem;
-  margin-left: 20rem;
-  margin-bottom: 3rem;
+  /* margin-left: 20rem;
+  margin-bottom: 3rem; */
   padding: 2.5rem;
   background-color: #FAECE3;
 }
@@ -1961,8 +2161,10 @@ ul li a:hover {
 /*ADMIN PAGE*/
 /*inventory page*/
 .book-inventory-heading {
+  margin-top: 2rem;
+  margin-left: 8.5rem;
   width: 85%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   margin-bottom: 2rem;
 }
 
@@ -2007,7 +2209,7 @@ select:focus{ /*got colour when select*/
   box-shadow: 0 0 5px rgba(46, 27, 3, 0.5);
 }
 
-.quick-search {
+.quick-search-bar {
   padding: 0.5rem;
   font-size: .85rem;
   border: 1px solid  #2C1106;
@@ -2199,21 +2401,22 @@ main.table {
   align-items: center;
   background-color: #FAECE3;
   width: 85%;
+  margin-top: 0;
   margin: 0 auto;
   height: 100rem;
   border-radius: 0.6rem;
-  margin-bottom: 5rem;
 }
 
 .add-book-heading {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: left;
 }
 
 .add-book-heading h2 {
   font-size: 1.2rem;
-  margin-left: -3rem;
+  margin-left: 3rem;
   margin-bottom: 2rem;
   color: #2C1106;
 }
@@ -2611,4 +2814,261 @@ main.table {
 .profile-3 p {
   margin-bottom: 1rem;
   color: #2C1106;
+}
+
+/*detailed book info - Powerless*/
+/*set font weights so i don't have to keep specifying*/
+.regular-word {
+  font-weight: 400;
+}
+
+.bold-word {
+  font-weight: 600;
+}
+
+.book-info-container {
+  color: #2C1106;
+}
+
+.book-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  width: 100%;
+  padding: 4rem;
+}
+
+.book-image-column {
+  width: 50%;
+}
+
+.breadcrumb {
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+}
+
+.book-info-column {
+  width: 50%;
+  margin-top: 3rem;
+}
+
+.book-image-column img {
+  width: 40%;
+  border-radius: 1rem;
+  margin-left: 3rem;
+}
+
+.book-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  margin-bottom: 2rem;
+}
+
+.book-header-row {
+  display: flex;
+  gap: 4rem;
+}
+
+.book-title {
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+.book-info-author {
+  display: flex;
+  flex-direction: column;
+}
+
+.published-author {
+  display: flex;
+  font-size: 0.8rem;
+}
+
+.book-info-header button {
+  background-color: #e5fbe5;
+  color: #315446;
+  border: none;
+  border-radius: 0.6rem;
+  padding: .7rem 2rem;
+  font-size: 1rem;
+}
+
+.book-info-header .homepage-btn {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.book-info-header .homepage-btn img {
+  object-fit: contain;
+  width: 1.2rem;
+}
+
+.book-description {
+  line-height: 1.6rem;
+  /*need to add break height*/
+  text-align: justify;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.book-genres {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.book-genres span {
+  margin-right: 2.5rem;
+}
+
+.book-genres .bold-word {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+}
+
+.book-cta-container {
+  margin-bottom: 2rem;
+}
+
+.book-cta-container .quantity-title {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #a6a6a6;
+}
+
+.book-cta-container .add-items{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-cta-container .add-quantity-btn button{
+  background-color: white;
+  color: #2C1106;
+  border: none;
+  border-radius: .8rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 12rem;
+  height: 3.5rem;
+  font-size: 1rem;
+}
+
+.book-cta-container .add-to-cart-btn button{
+  background-color: #315446;
+  color: white;
+  border: none;
+  border-radius: .8rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 12rem;
+  height: 3.5rem;
+  font-size: 1rem;
+}
+
+.book-cta-container .add-to-wishlist p{
+  color: gray;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.book-details h3 {
+  margin-bottom: 1rem;
+}
+
+.book-details h3 img {
+  width: 3rem;
+}
+
+.book-details .book-details-info {
+  display: flex;
+  gap: 10rem;
+  line-height: 3rem;
+  color: #2C1106;
+}
+
+.about-author {
+  margin-bottom: 2rem;
+}
+
+.about-author h3 {
+  margin-bottom: 1rem;
+}
+
+.author-details {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.author-details img {
+  background-color: gray;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 3rem;
+}
+
+.author-description {
+  text-align: justify;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.similar-books {
+  margin-bottom: 2rem;
+}
+
+.similar-books-header h3 {
+  margin-bottom: 2rem;
+}
+
+.similar-books-header span {
+  color: gray;
+  width: 1rem;
+  height: 1rem;
+}
+
+.similar-book-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.similar-book-content img {
+  width: 100%;
+  height: 18rem;
+  border-radius: 0.5rem;
+}
+
+.all-similar-books-btn {
+  display: flex;
+}
+
+.all-similar-books-btn p {
+  margin-right: 1rem;
+}
+
+.all-similar-books-btn img {
+  width: 0.35rem;
+  cursor: pointer;
 }

@@ -9,34 +9,39 @@
 </head>
 
 <body>
-  <!--Nav Bar-->
+  <!--nav bar second version -->
   <header class="header">
-
     <div class="header-1">
-      <ul class="nav-menus">
-        <li>
-          <a href="">Home</a>
-          <img src="icon/dropdown.svg" alt="dropdown icon">
-        </li>
-        <li>
-          <a href="">Categories</a>
-          <img src="icon/dropdown.svg" alt="dropdown icon">
-        </li>
-        <li>
-          <a href="">Authors</a>
-          <img src="icon/dropdown.svg" alt="dropdown icon">
-        </li>
-        <li><a href="">Contact us</a></li>
-      </ul>
-    
-
-      <a href="index.html"><img src="logo.svg" alt="store logo" class="logo"> </a>
-
-      <div class="nav-icons">
-        <a href=""> <img src="icon/search.svg" alt="search bar"></a>
-        <a href="shopping-cart.html"> <img src="icon/cart.svg" alt="shopping cart"></a>
-        <a href="sign-in.html"> <img src="icon/profile.svg" alt="user-profile"></a>
+      <div class="section1">
+        <ul class="nav-menus">
+          <li>
+            <a href="">Home</a>
+            <img src="icon/dropdown.svg" alt="dropdown icon">
+          </li>
+          <li>
+            <a href="">Categories</a>
+            <img src="icon/dropdown.svg" alt="dropdown icon">
+          </li>
+          <li>
+            <a href="">Authors</a>
+            <img src="icon/dropdown.svg" alt="dropdown icon">
+          </li>
+          <li><a href="">Contact us</a></li>
+        </ul>
       </div>
+    
+      <div class="section2">
+        <a href="index.html"><img src="logo.svg" alt="store logo" class="logo"> </a>
+      </div>
+
+      <div class="section3">
+        <div class="nav-icons">
+          <a href=""> <img src="icon/search.svg" alt="search bar"></a>
+          <a href="shopping-cart.html"> <img src="icon/cart.svg" alt="shopping cart"></a>
+          <a href="sign-in.html"> <img src="icon/profile.svg" alt="user-profile"></a>
+        </div>
+      </div>
+      
     </div>
   </header>
 
@@ -52,11 +57,14 @@
     <div class="sign-in-delemeter"></div>
 
     <div class="sign-in-details">
-      <form id="loginForm" action="login-in-handler.php" method="POST">
+
+      <form id="loginForm" action="login-handler.php" method="POST">
         <label for="username">
           <h3>* Username</h3>
         </label>
-        <input type="username" id="username" name="username" required>
+        <div class="username-box">
+          <input type="username" id="username" name="username" required>
+        </div>
 
         <label for="password">
           <h3>* Password</h3>
@@ -64,7 +72,7 @@
 
         <div class="password-box">
           <input type="password" id="password" name="password" required>
-          <button type="button" class="password-show-btn" onclick="togglePasswordVisibility">
+          <button type="button" class="password-show-btn" onclick="togglePasswordVisibility()">
             <img src="icon/password-eye-close.svg" alt="toggle-password-visibility">
           </button>
         </div>
@@ -77,6 +85,8 @@
         <button type="submit" class="registered-user-sign-in">SIGN IN</button>
       </form>
 
+      
+
       <script>
         const loginForm = document.getElementById('loginForm');
 
@@ -86,10 +96,10 @@
           const username = document.getElementById('username').value;
           const password = document.getElementById('password').value;
 
-          try{
-            //send login request to REST API
+          try {
+            // Send login request to REST API
             const response = await fetch('http://localhost:8000/login.php', {
-              method: 'POST', 
+              method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
               },
@@ -102,12 +112,14 @@
 
             const data = await response.json();
 
+            console.log(JSON.stringify(data));
+
             if (data.session_id) {
               //save the session_id
               localStorage.setItem('session_id', data.session_id);
 
               //after successful login, save the username to cookies 
-              document.cookie = 'username=${username}; path=/; max-age=${60 * 60 * 24 * 7}'; //expires in one week
+              document.cookie = `username=${username}; path=/; max-age=${60 * 60 * 24 * 7}`; //expires in one week
 
               alert('Login successful');
             } else {
@@ -121,6 +133,7 @@
           }
         });
       </script>
+
       <p class="forgot-password">Forgotten Password?</p>
     </div>
   </div>

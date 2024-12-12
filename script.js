@@ -1,3 +1,4 @@
+
 //price slider for stock image
 const rangeSlide = document.querySelector(".range-slide");
 const tooltip = document.querySelector(".tooltip");

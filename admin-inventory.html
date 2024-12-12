@@ -9,37 +9,40 @@
 </head>
 
 <body>
-  <!--Nav Bar-->
+  <!--nav bar second version -->
   <header class="header">
-    <nav class="nav-bar">
-      <ul class="nav-menus">
-        <li>
-          <a href="">Home</a>
-          <img src="icon/dropdown.svg" alt="dropdown icon">
-        </li>
-        <li>
-          <a href="">Categories</a>
-          <img src="icon/dropdown.svg" alt="dropdown icon">
-        </li>
-        <li>
-          <a href="">Authors</a>
-          <img src="icon/dropdown.svg" alt="dropdown icon">
-        </li>
-        <li><a href="">Contact us</a></li>
-      </ul>
-      
-      <div class="logo">
-        <a href="index.html"><img src="logo.svg" alt="store logo"></a>
+    <div class="header-1">
+      <div class="section1">
+        <ul class="nav-menus">
+          <li>
+            <a href="">Home</a>
+            <img src="icon/dropdown.svg" alt="dropdown icon">
+          </li>
+          <li>
+            <a href="">Categories</a>
+            <img src="icon/dropdown.svg" alt="dropdown icon">
+          </li>
+          <li>
+            <a href="">Authors</a>
+            <img src="icon/dropdown.svg" alt="dropdown icon">
+          </li>
+          <li><a href="">Contact us</a></li>
+        </ul>
       </div>
     
-      <div class="nav-icons">
-        <a href=""> <img src="icon/search.svg" alt="search bar"></a>
-        <a href="admin-inventory.html"> <img src="icon/inventory-icon.svg" alt="inventory icon"></a>
-        <a href="profile.html"> <img src="icon/profile.svg" alt="user-profile"></a> 
-        <!--if admin signed in, it should not direct them to the sign in page 
-        when they click on the icon-->
+      <div class="section2">
+        <a href="home-page-admin.html"><img src="logo.svg" alt="store logo" class="logo"> </a>
       </div>
-    </nav>
+
+      <div class="section3">
+        <div class="nav-icons">
+          <a href=""> <img src="icon/search.svg" alt="search bar"></a>
+          <a href="admin-add-stock.html"> <img src="icon/add-stock-icon.svg" alt="add stock icon"></a>
+          <a href="profile.html"> <img src="icon/profile.svg" alt="user-profile"></a>
+        </div>
+      </div>
+      
+    </div>
   </header>
 
   <!--book inventory-->
@@ -80,7 +83,7 @@
       </select>
     </div>
 
-    <input type="text" placeholder="Quick Search" class="quick-search">
+    <input type="text" placeholder="Quick Search" class="quick-search-bar">
 
     <div class="add-stock-icon">
       <a href="admin-add-stock.html"><p>+</p></a>
@@ -100,8 +103,8 @@
             <th>Author</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
+        <tbody id="book-data">
+          <!-- <tr>
             <td> <img src="bookcover/checkmate.jpg" alt="check&mate book"></td>
             <td>Check & Mate</td>
             <td>978-0-7432-7356-5</td>
@@ -181,7 +184,8 @@
             <td>978-0-023-19202-0</td>
             <td>0</td>
             <td>Alice Oseman</td>
-          </tr>
+          </tr> -->
+
         </tbody>
       </table>
     </section>
@@ -211,6 +215,40 @@
       </div>
     </div>
   </div>
+
+  <script>
+    async function fetchBookData() {
+      try {
+        const response = await fetch('http://localhost:8000/stockInfo.php');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const books = await response.json();
+
+        const tableBody = document.getElementById('book-data');
+        tableBody.innerHTML = ''; // Clear existing content
+
+        books.forEach(book => {
+          const row = document.createElement('tr');
+
+          row.innerHTML = `
+            <td><img src="${book.cover_image}" alt="${book.title} cover" style="width: 50px; height: auto;"></td>
+            <td>${book.title}</td>
+            <td>${book.isbn13}</td>
+            <td>${book.stock_quantity}</td>
+            <td>${book.author}</td>
+          `;
+
+          tableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error fetching book data:', error);
+      }
+    }
+
+    // Fetch data when the page loads
+    document.addEventListener('DOMContentLoaded', fetchBookData);
+  </script>
 
 </body>
 </html>
